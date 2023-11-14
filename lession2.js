@@ -47,7 +47,7 @@
 
 // console.log("12345".replace(/1/,"T"));
 // console.log("12345".replacAll(/1/,"T"));
-// console.log("12345".replace(/1/g,"T"));
+// console.log("tan 123".replace(/1/w,"T"));
 
 // let student = {
 //     "name":"Tan",
@@ -55,20 +55,31 @@
 //     "sex":"male"
 // }
 
-let student = {
-    name:"Tan",
-    age: 12,
-    sex:"male",
-    getNameAndAddress: function(){
-        return (this.name + " " + this. address);
-    }
-}
-console.log(student);
-student.address = "123";
-console.log(student);
+// let student = {
+//     name:"Tan",
+//     age: 12,
+//     sex:"male",
+//     getNameAndAddress: function(){
+//         return (this.name + " " + this. address);
+//     }
+// }
+// console.log(student);
+// student.address = "123";
+// console.log(student);
 
-console.log(student.age);
-console.log(student["sex"]);
-console.log(Object.keys(student));
+// console.log(student.age);
+// console.log(student["sex"]);
+// console.log(Object.keys(student));
 
-console.log(student.getNameAndAddress())
+// console.log(student.getNameAndAddress());
+
+// console.log(delete student.sex);
+// console.log(student);
+
+// const obj = {a:2,b:4};
+// console.log(obj);
+// delete obj.a;
+// console.log(obj);
+// console.log(JSON.stringify(obj));
+
+
