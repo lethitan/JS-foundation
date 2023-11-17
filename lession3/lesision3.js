@@ -162,16 +162,16 @@
 //     return a+b;
 // // }
 
-// function doSomething(a){
-//     function do2(b){
-//         return a+b;
-//     }
-//     function do3(c){
-//         return a+c;
-//     }
-//     return do2(b) + do3(c);
-// }
-// console.log(doSomething((5(2(1)))));
+function doSomething(a,b,c){
+    function do2(b){
+        return a+b;
+    }
+    function do3(c){
+        return a+c;
+    }
+    return do2(b) + do3(c);
+}
+console.log(doSomething(5,2,3));
 
 
 // function dodo(a){
