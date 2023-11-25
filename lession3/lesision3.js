@@ -107,7 +107,7 @@
 //     return a.studentName.localeCompare(b.studentName);
 // // });
 // var all = students.sort(function(a,b){
-//     return a.age- b.age;
+//     retur.n a.age- b.age;
 // });
 // console.log(all[0].studentName + all[1].studentName + all[2].studentName + all[3].studentName)
 
