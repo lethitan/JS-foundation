@@ -49,7 +49,7 @@ function checkPocker(num, pocker, player) {
 
 console.log( Pocker(9))
 console.log( Pocker(0))
-const print = Pocker(4);
+const print = Pocker(3);
 
 for (let i = 0; i < print.length; i++) {
     // for (let j = 0; j < print[i].length; j++) {
