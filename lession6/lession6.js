@@ -9,13 +9,9 @@
 // console.log(obj);
 
 // console.log(map.get("name"));
-<<<<<<< HEAD
-// console.log(map.has("namess")); // check co ton tai key name khong
-=======
-// console.log(map.has("namess"));
->>>>>>> cfb6d88462f0c72e79d821ac65cb96888a6d8795
+// console.log(map.has("ten"));
 
-// // map.delete("name");
+// map.delete("name");
 // map.clear();
 // console.log(map);
 
@@ -61,13 +57,7 @@
 
 // console.log(objB);
 
-// console.log(Math.floor(Math.random() * 100));
-
-<<<<<<< HEAD
-// Review lai bai nay
-=======
-
->>>>>>> cfb6d88462f0c72e79d821ac65cb96888a6d8795
+console.log(Math.floor(Math.random() * 53));
 // function random(N) {
 //     const arr = [];
 
