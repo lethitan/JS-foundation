@@ -57,7 +57,7 @@
 
 // console.log(objB);
 
-console.log(Math.floor(Math.random() * 53));
+//console.log(Math.floor(Math.random() * 53));
 // function random(N) {
 //     const arr = [];
 
@@ -87,7 +87,7 @@ function random(N, min, max) {
     }
 
     if (N > (max - min + 1) || max < min) {
-        return null; //error case
+        return null; 
     }
 
     return arr;
