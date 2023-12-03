@@ -13,10 +13,21 @@ function Pocker(numberOfPlayer) {
                 --i;
             }
         }
-        console.log(player);
+        ///console.log(player);
         result.push(player);
+        if(numberOfPlayer == 4 && result.length == 3) {
+            player = [];
+            for (let i = 0; i < 13; i++) {
+                let count = checkPocker(i,result,player);
+                while (count < 4) {
+                    player.push(i);
+                    count++;
+                }
+            }
+           // console.log(player);
+            result.push(player);
+        }
         //console.log(result.length);
-
     }
     return result;
 }
@@ -33,7 +44,7 @@ function checkPocker(num, pocker, player) {
                 // console.log(count + " " + num);
             }
         }
-    } 
+    }
     if (player.length > 0) {
         for (let j = 0; j < player.length; j++) {
             if (player[j] === num) {
@@ -45,11 +56,12 @@ function checkPocker(num, pocker, player) {
     return count;
 }
 
+
 //=============== Test=================
 
-console.log( Pocker(9))
-console.log( Pocker(0))
-const print = Pocker(3);
+// console.log(Pocker(9))
+// console.log(Pocker(0))
+const print = Pocker(4);
 
 for (let i = 0; i < print.length; i++) {
     // for (let j = 0; j < print[i].length; j++) {
