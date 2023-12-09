@@ -1,79 +1,48 @@
-function Pocker(numberOfPlayer) {
-    const result = [];
-    if (numberOfPlayer < 2 || numberOfPlayer > 4) {
-        return null;
-    }
-    while (result.length < numberOfPlayer) {
-        let player = [];
-        for (let i = 0; i < 13; i++) {
-            let randNumber = Math.floor(Math.random() * 12);
-            if (checkPocker(randNumber, result, player) < 4) {
-                player.push(randNumber);
-            } else {
-                --i;
-            }
+
+
+function devideCards(numberOfPlayer) {
+    if (Number.isSafeInteger(numberOfPlayer) && numberOfPlayer > 2 && numberOfPlayer < 4) {
+        const players = new Array(numberOfPlayer);
+        const baseCard = [2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K", "A"];
+        const fullCards = [];
+        for (const card of baseCard) {
+            fullCards.push(card + "♠")
+            fullCards.push(card + "♥")
+            fullCards.push(card + "♦")
+            fullCards.push(card + "♣")
         }
-        ///console.log(player);
-        result.push(player);
-        if(numberOfPlayer == 4 && result.length == 3) {
-            player = [];
-            for (let i = 0; i < 13; i++) {
-                let count = checkPocker(i,result,player);
-                while (count < 4) {
-                    player.push(i);
-                    count++;
+        for (let i = 0; i < numberOfPlayer; i++) {
+            players[i] = [];
+        }
+        const pickedCard = [];
+        while (!isDivideCompleted(players)) {
+            for (let i = 0; i < players.length; i++) {
+                let j;
+                do {
+                    j = Math.floor(Math.random() * fullCards.length);
                 }
+                while (pickedCard.includes(fullCards[j]))            
+                players[i].push(fullCards[j]);
+                pickedCard.push(fullCards[j]);
             }
-           // console.log(player);
-            result.push(player);
         }
-        //console.log(result.length);
+        return players;
+    } else {
+        throw "Invalid number of players";
     }
-    return result;
 }
 
-function checkPocker(num, pocker, player) {
-    if (pocker.length === 0) {
-        return 0;
-    }
-    let count = 0;
-    for (let i = 0; i < pocker.length; i++) {
-        for (let j = 0; j < pocker[i].length; j++) {
-            if (pocker[i][j] === num) {
-                count++;
-                // console.log(count + " " + num);
-            }
+function isDivideCompleted(players) {
+    for (const player of players) {
+        if (player.length == 13) {
+            return true;
+        } else {
+            return false;
         }
     }
-    if (player.length > 0) {
-        for (let j = 0; j < player.length; j++) {
-            if (player[j] === num) {
-                count++;
-                // console.log(count + " " + num);
-            }
-        }
-    }
-    return count;
 }
 
 
 //=============== Test=================
 
-// console.log(Pocker(9))
-// console.log(Pocker(0))
-const print = Pocker(4);
-
-for (let i = 0; i < print.length; i++) {
-    // for (let j = 0; j < print[i].length; j++) {
-    console.log(print[i]);
-    // }
-}
-// for (let i = 0; i < 13; i++) {
-//     console.log(checkPocker(i, print))
-// }
-
-
-
-// function ranNum() {
-//     return
-// }
+console.log(JSON.stringify(devideCards(3)));
