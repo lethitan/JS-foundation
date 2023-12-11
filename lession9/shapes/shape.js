@@ -1,5 +1,12 @@
 class shapes {
-    // name;
+    constructor(name) {
+        this.name = name;
+    }
+    #defaultName = "Shape";
+    printName() {
+        let nm = this.name == undefined || this.name == null ? this.#defaultName : this.name;
+        return nm;
+    }
     // edges;
     acreage() {
         throw new Error("Something was wrong !");
@@ -8,54 +15,40 @@ class shapes {
     perimeter() {
         throw new Error("Something was wrong !");
     }
-    // constructor(name){
-    //     this.name = name;
-    // }
-    // set Edges(edges) {
-    //     edges = this.edges
-    // }
-    // get Edges() {
-    //     return this.edges
-    // }
-
-    // set Name(name) {
-    //     name = this.name;
-    // }
-    // get Name() {
-    //     return this.name;
-    // }
 }
 
-
-// let shapes = new Shapes("Triangle");
-// console.log(shapes.name);
-
-// shapes.name = "Reactangle";
-// console.log(shapes.name);
 
 class Rectangle extends shapes {
+    #defaultPer;
+    #defaultAcre;
+
     constructor(width, hight) {
-        super();
+        super("Rectangle");
         this.width = width;
         this.hight = hight;
+        // this.#defaultPer = super.perimeter();
+        // this.#defaultAcre = super.acreage();
     }
 
-    perimeter(){
-        return (this.hight+this.width)*2;
+    perimeter() {
+       // let p = this.hight == 0 || this.width == 0 || !Number.isSafeInteger(this.hight) || !Number.isSafeInteger(this.width) ? this.#defaultPer : (this.hight + this.width) * 2;
+        return (this.hight + this.width) * 2;
     }
 
-    acreage(){
-        return  this.hight*this.width;
+    acreage() {
+       // let a = this.hight == 0 || this.width == 0 || !Number.isSafeInteger(this.hight) || !Number.isSafeInteger(this.width) ? this.#defaultAcre : this.hight * this.width;
+        return this.hight * this.width;
     }
 }
-
-let rec = new Rectangle("0",4);
+let rec = new Rectangle(6, 4);
 console.log(rec.perimeter());
 console.log(rec.acreage());
+console.log(rec.name);
+
 
 class Square extends shapes {
     constructor(edge) {
-        super();
+        super("Square");
         this.edge = edge;
     }
 
@@ -68,9 +61,15 @@ class Square extends shapes {
     }
 }
 
+let square = new Square(6);
+console.log(square.perimeter());
+console.log(square.acreage());
+console.log(square.name);
+
+
 class Cycle extends shapes {
     constructor(r) {
-        super();
+        super("Cycle");
         this.r = r;
     }
 
@@ -83,9 +82,15 @@ class Cycle extends shapes {
     }
 }
 
-class Tritangle extends shapes {
+let cycle = new Cycle(6);
+console.log(cycle.perimeter());
+console.log(cycle.acreage());
+console.log(cycle.name);
+
+
+class Triangle extends shapes {
     constructor(a, b, c) {
-        super();
+        super("Triangle");
         this.a = a;
         this.b = b;
         this.c = c;
@@ -97,6 +102,11 @@ class Tritangle extends shapes {
     }
 
     perimeter() {
-        return this.canhA + this.canhB + this.canhC;
+        return this.a + this.b + this.c;
     }
 }
+
+let triangle = new Triangle(3,4,5);
+console.log(triangle.perimeter());
+console.log(triangle.acreage());
+console.log(triangle.name);
