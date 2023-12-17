@@ -1,0 +1,8 @@
+
+* Project layer :
+- Can use "import" in the same project with "require" but not vice versa if by using extemtion .js with package.json is defined.
+- Using extention .cjs for js file using "require" or|and .mjs for js file using "import" to both use of them in the same project.
+* File layer : 
+- Just only use "import" or "require" in file js.
+- Can't use both "import" and "require" in export file
+- if has package.json file, extention of export by "require" is .cjs
