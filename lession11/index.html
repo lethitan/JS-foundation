@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Xin chao cooco</title>
+  <script type="module" src="./main.js"></script>
+</head>
+
+<body>
+  <div id="div1" class="my-css my-abc" dodo="1"></div>
+  <button id = "my-btn" type="button" onclick="clickMePlease()">Click me!</button>
+  <input type="checkbox">
+  <input type="color">
+  <input type="date">
+  <input type="email">
+  <input type="radio">
+  <script>
+    function clickMePlease() {
+      document.getElementById("div1").dodo = "2";
+
+      let child = document.createElement("div");
+      child.innerText = "I'm coco";
+      document.getElementById("div1").appendChild(child);
+    }
+  </script>
+</body>
+
+</html>
